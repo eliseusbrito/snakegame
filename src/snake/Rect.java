@@ -1,36 +1,47 @@
 package snake;
 
-public class Rect {
+import java.awt.Color;
+import java.awt.Graphics;
 
+public class Rect {
+	private Color color;
 	private int x;
 	private int y;
 	private int width;
 	private int height;
-	public int getX() {
-		return x;
-	}
-	public void setX(int x) {
+	
+	public Rect(Color color, int x, int y, int width, int height) {
+		this.color = color;
 		this.x = x;
-	}
-	public int getY() {
-		return y;
-	}
-	public void setY(int y) {
 		this.y = y;
-	}
-	public int getWidth() {
-		return width;
-	}
-	public void setWidth(int width) {
 		this.width = width;
-	}
-	public int getHeight() {
-		return height;
-	}
-	public void setHeight(int height) {
 		this.height = height;
 	}
 	
+	public int getX() {
+		return x;
+	}
 	
+	public int getY() {
+		return y;
+	}
+	
+	public int getWidth() {
+		return width;
+	}
+	
+	public int getHeight() {
+		return height;
+	}
+	
+	public Color getColor() {
+		return color;
+	}
+		
+	public void paint (Graphics g) {
+		g.setColor(color);
+		g.fillRect(x, y, width, height);
+		
+	}
 	
 }
